@@ -1,0 +1,155 @@
+{
+  "analysis": {
+    "company": "NeuroVista Health (fictional demo)",
+    "objective": "Assess revenue quality, market position, and key risks.",
+    "executive_summary": "NeuroVista appears to have a credible recurring-revenue base and improving enterprise adoption, but the evidence indicates meaningful customer concentration and limited independent validation of management's market-leadership claims. The highest-priority diligence items are cohort retention, top-customer renewal terms, and reconciliation of reported bookings with recognized revenue.",
+    "claims": [
+      {
+        "claim": "Subscription revenue represented 82% of FY2025 revenue.",
+        "category": "Financial performance",
+        "evidence_excerpt": "Subscription revenue was $32.8 million, or 82% of total revenue.",
+        "source_title": "NeuroVista FY2025 Annual Report (fictional)",
+        "source_url": "https://example.com/neurovista-annual-report",
+        "source_type": "annual_report",
+        "publication_date": "2026-03-15",
+        "confidence_score": 0.97,
+        "validation_status": "Supported",
+        "analyst_note": "Company-reported audited figure in this fictional example."
+      },
+      {
+        "claim": "Revenue grew approximately 18% in FY2025.",
+        "category": "Financial performance",
+        "evidence_excerpt": "Revenue increased from $33.9 million to $40.0 million year over year.",
+        "source_title": "NeuroVista FY2025 Annual Report (fictional)",
+        "source_url": "https://example.com/neurovista-annual-report",
+        "source_type": "annual_report",
+        "publication_date": "2026-03-15",
+        "confidence_score": 0.96,
+        "validation_status": "Supported",
+        "analyst_note": "Growth is calculated from the disclosed figures."
+      },
+      {
+        "claim": "The top three customers represented 41% of annual revenue.",
+        "category": "Revenue quality",
+        "evidence_excerpt": "The three largest customer relationships accounted for 41% of revenue.",
+        "source_title": "NeuroVista FY2025 Annual Report (fictional)",
+        "source_url": "https://example.com/neurovista-annual-report",
+        "source_type": "annual_report",
+        "publication_date": "2026-03-15",
+        "confidence_score": 0.98,
+        "validation_status": "Supported",
+        "analyst_note": "Concentration is material and should be tested by contract and renewal date."
+      },
+      {
+        "claim": "Enterprise customer count increased from 46 to 63.",
+        "category": "Customers",
+        "evidence_excerpt": "Enterprise logos increased to 63 at year-end from 46 in the prior year.",
+        "source_title": "NeuroVista Investor Presentation (fictional)",
+        "source_url": "https://example.com/neurovista-investor-presentation",
+        "source_type": "investor_presentation",
+        "publication_date": "2026-04-02",
+        "confidence_score": 0.88,
+        "validation_status": "Supported",
+        "analyst_note": "Management-reported KPI; request customer-level support."
+      },
+      {
+        "claim": "NeuroVista has the highest retention rate in its market.",
+        "category": "Competitive position",
+        "evidence_excerpt": "Our platform delivers industry-leading retention.",
+        "source_title": "NeuroVista Customer Case Study (fictional)",
+        "source_url": "https://example.com/neurovista-case-study",
+        "source_type": "company_marketing",
+        "publication_date": "2025-11-20",
+        "confidence_score": 0.42,
+        "validation_status": "Insufficient evidence",
+        "analyst_note": "The source supports management's assertion, not comparative market leadership. Confidence score is below the minimum review threshold."
+      },
+      {
+        "claim": "The addressable market is expected to grow at a double-digit rate.",
+        "category": "Market",
+        "evidence_excerpt": "The digital cognitive health segment is projected to grow at 13% annually through 2030.",
+        "source_title": "Digital Cognitive Health Market Review (fictional)",
+        "source_url": "https://example.com/cognitive-health-market-review",
+        "source_type": "industry_research",
+        "publication_date": "2026-02-10",
+        "confidence_score": 0.81,
+        "validation_status": "Supported",
+        "analyst_note": "Market definition should be reconciled with the company's served segments."
+      },
+      {
+        "claim": "Bookings growth exceeded revenue growth because of longer enterprise implementations.",
+        "category": "Revenue quality",
+        "evidence_excerpt": "Bookings grew 29%, with deployment timelines typically ranging from four to nine months.",
+        "source_title": "NeuroVista Investor Presentation (fictional)",
+        "source_url": "https://example.com/neurovista-investor-presentation",
+        "source_type": "investor_presentation",
+        "publication_date": "2026-04-02",
+        "confidence_score": 0.74,
+        "validation_status": "Partially supported",
+        "analyst_note": "The causal link is a reasonable inference but requires backlog and implementation data."
+      },
+      {
+        "claim": "The company has no meaningful direct competitors.",
+        "category": "Competitive position",
+        "evidence_excerpt": "The landscape identifies at least five vendors serving overlapping enterprise use cases.",
+        "source_title": "Healthcare Software Competitive Landscape (fictional)",
+        "source_url": "https://example.com/healthcare-software-landscape",
+        "source_type": "industry_research",
+        "publication_date": "2026-01-18",
+        "confidence_score": 0.93,
+        "validation_status": "Conflicting evidence",
+        "analyst_note": "External evidence contradicts the implied no-competition narrative."
+      }
+    ],
+    "key_risks": [
+      "Top-three customer concentration of 41% creates renewal and pricing exposure.",
+      "Bookings-to-revenue conversion cannot be validated without backlog and implementation data.",
+      "Competitive-position claims rely partly on company marketing rather than independent evidence.",
+      "Retention and churn metrics are not disclosed by cohort or customer segment."
+    ],
+    "open_questions": [
+      "What are renewal dates, termination rights, and pricing escalators for the top ten customers?",
+      "How do bookings, contracted backlog, billings, and GAAP revenue reconcile by quarter?",
+      "What are gross and net revenue retention by cohort and customer size?",
+      "Which competitors appear most frequently in won and lost opportunities?"
+    ],
+    "methodology_note": "Fictional demonstration data designed to show the workflow. It must not be used as factual research about any real company."
+  },
+  "sources": [
+    {
+      "title": "NeuroVista FY2025 Annual Report (fictional)",
+      "url": "https://example.com/neurovista-annual-report",
+      "source_type": "annual_report",
+      "publication_date": "2026-03-15",
+      "reliability_score": 0.95
+    },
+    {
+      "title": "NeuroVista Investor Presentation (fictional)",
+      "url": "https://example.com/neurovista-investor-presentation",
+      "source_type": "investor_presentation",
+      "publication_date": "2026-04-02",
+      "reliability_score": 0.8
+    },
+    {
+      "title": "Digital Cognitive Health Market Review (fictional)",
+      "url": "https://example.com/cognitive-health-market-review",
+      "source_type": "industry_research",
+      "publication_date": "2026-02-10",
+      "reliability_score": 0.75
+    },
+    {
+      "title": "NeuroVista Customer Case Study (fictional)",
+      "url": "https://example.com/neurovista-case-study",
+      "source_type": "company_marketing",
+      "publication_date": "2025-11-20",
+      "reliability_score": 0.55
+    },
+    {
+      "title": "Healthcare Software Competitive Landscape (fictional)",
+      "url": "https://example.com/healthcare-software-landscape",
+      "source_type": "industry_research",
+      "publication_date": "2026-01-18",
+      "reliability_score": 0.75
+    }
+  ]
+}
