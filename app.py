@@ -677,8 +677,14 @@ def _render_claim_card(claim: EvidenceClaim, index: int) -> None:
         c3.markdown(f"**Published**  \n{_safe(claim.publication_date or 'Not supplied')}")
         if claim.analyst_note:
             st.caption(f"Analyst note: {claim.analyst_note}")
-        if claim.source_url and claim.source_url.startswith(("http://", "https://")):
+        if (
+            st.session_state.get("run_mode") != "Demo"
+            and claim.source_url
+            and claim.source_url.startswith(("http://", "https://"))
+        ):
             st.link_button("Open cited source", claim.source_url)
+        elif st.session_state.get("run_mode") == "Demo":
+            st.caption("Illustrative source record — no external link in the fictional demo.")
 
 
 PRESETS = {
@@ -836,7 +842,8 @@ with st.container(border=True):
             list(PRESETS),
             key="preset_selector",
             on_change=_apply_preset,
-            help="Selecting a preset updates the objective and recommended diligence categories.",
+            disabled=st.session_state.get("mode_selector", "Demo") == "Demo",
+            help="Presets are fixed in the fictional demo. In Live research, selecting a preset updates the objective and recommended diligence categories.",
         )
 
     mode = st.session_state["mode_selector"]
@@ -845,6 +852,12 @@ with st.container(border=True):
     if not enable_live_mode:
         st.caption("Live research is disabled in this public deployment to protect API usage.")
 
+    if mode == "Demo":
+        st.info(
+            "Fictional demonstration: the company, sources, metrics, and conclusions below are illustrative. "
+            "The inputs are locked so the sample cannot be mistaken for real-company research."
+        )
+
     with st.form("research_form", clear_on_submit=False):
         col1, col2 = st.columns([.8, 1.2])
         with col1:
@@ -852,7 +865,8 @@ with st.container(border=True):
                 "Company name",
                 key="company_input",
                 placeholder="Example: Adobe",
-                help="Use the legal or commonly recognized company name.",
+                disabled=mode == "Demo",
+                help="The fictional company is fixed in Demo mode. Live research accepts a legal or commonly recognized company name.",
             )
         with col2:
             objective = st.text_area(
@@ -860,14 +874,16 @@ with st.container(border=True):
                 key="objective_input",
                 placeholder="Example: Evaluate revenue durability, customer concentration, and acquisition risks.",
                 height=96,
-                help="Describe the decision you are supporting and the issues that matter most.",
+                disabled=mode == "Demo",
+                help="The sample objective is fixed in Demo mode. In Live research, describe the decision and the issues that matter most.",
             )
 
         categories = st.multiselect(
             "Diligence categories",
             ALL_CATEGORIES,
             key="categories_input",
-            help="Select only the categories relevant to the decision. More categories usually produce a broader, less focused brief.",
+            disabled=mode == "Demo",
+            help="The categories are fixed in Demo mode. In Live research, choose only the areas relevant to the decision.",
         )
 
         uploaded_files = st.file_uploader(
@@ -903,8 +919,10 @@ if submitted:
     if not company.strip() or not objective.strip() or not categories:
         st.error("Enter a company name, a research objective, and at least one diligence category.")
     elif mode == "Demo":
+        demo_company = "NeuroVista Health (fictional)"
+        demo_objective = "Assess revenue quality, market position, and key risks."
         sources = load_demo_sources()
-        result = validate_output(load_demo_output(company.strip(), objective.strip()), sources)
+        result = validate_output(load_demo_output(demo_company, demo_objective), sources)
         st.session_state["result"] = result
         st.session_state["sources"] = sources
         st.session_state["research_text"] = "Fictional demonstration research record."
